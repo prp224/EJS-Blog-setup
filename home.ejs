@@ -1,0 +1,16 @@
+<%- include("partials/header"); -%>
+<img src="https://www.incimages.com/uploaded_files/image/1920x1080/getty_938993594_391384.jpg" alt="picture-coffee">
+<h1>Home</h1>
+<p><%= homeContent %></p>
+
+
+  <%posts.forEach(function(element){%>
+      <h1><%= element.title %></h1>
+      <% if(element.compose.length > 100){ %>
+        <p><%= element.compose.substring(0, 100) + " ... " %><a href="/posts/<%=element.title%>"">Read More</a></p>
+      <%} else { %>
+        <p><%= element.compose %></p>
+      <%}%>
+  <%});%>
+
+<%- include("partials/footer"); -%>
